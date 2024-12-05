@@ -1,11 +1,12 @@
-Prompt = input('Введите строку для поиска')
-a = []
+Prompt=input('Введите строку для поиска')
+strings_list=[]
 with open("text.txt", "r") as file:
     for line in file:
         if Prompt in line:
             print(line)
-            a.extend(line)
-    b = ''.join(a)
-    list = b.split('\n')
-    list.sort()
-    print(list)
+            strings_list.extend(line)
+    string_of_strings=''.join(strings_list)
+    sorted_strings=sorted(string_of_strings.split('\n'))
+    for i in range(len(sorted_strings)):
+        print(sorted_strings[i])
+    
